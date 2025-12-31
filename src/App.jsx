@@ -12,7 +12,7 @@ function App() {
   return (
     <ThemeProvider>
       <WatchlistProvider>
-        <Router>
+        <Router basename="/MovieDB/">
           <div className="flex flex-col min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] font-sans transition-colors duration-300">
             <Navbar />
             <main className="flex-grow">
