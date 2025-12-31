@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
 
 const MovieCard = ({ movie }) => {
   const releaseYear = movie.release_date
@@ -18,7 +19,7 @@ const MovieCard = ({ movie }) => {
           loading="lazy"
         />
         <span className="rating-badge">
-          ⭐ {movie.vote_average?.toFixed(1) || "N/A"}
+          <FaStar className="text-yellow-500" /> {movie.vote_average?.toFixed(1) || "N/A"}
         </span>
       </div>
       <div className="movie-info">

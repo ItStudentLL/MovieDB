@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  /* Light Theme (Default) */
   --bg-primary: #ffffff;
   --bg-secondary: #f9fafb;
   --bg-tertiary: #f3f4f6;
@@ -56,7 +55,6 @@ button {
   font-family: inherit;
 }
 
-/* ==================== HEADER ==================== */
 .header {
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
@@ -143,7 +141,6 @@ button {
   color: var(--text-primary);
 }
 
-/* Mobile Navigation */
 .mobile-nav {
   display: none;
   background: var(--bg-primary);
@@ -169,7 +166,6 @@ button {
   color: var(--accent-primary);
 }
 
-/* ==================== HERO SECTION ==================== */
 .hero {
   background: linear-gradient(
     135deg,
@@ -243,7 +239,6 @@ button {
   background: var(--accent-hover);
 }
 
-/* ==================== MOVIE SECTIONS ==================== */
 .movie-section {
   padding: 48px 24px;
   background: var(--bg-primary);
@@ -302,7 +297,6 @@ button {
   border-radius: 3px;
 }
 
-/* ==================== MOVIE CARD ==================== */
 .movie-card {
   flex: 0 0 200px;
   background: var(--bg-primary);
@@ -367,7 +361,6 @@ button {
   color: var(--text-muted);
 }
 
-/* ==================== MOVIE DETAILS PAGE ==================== */
 .movie-hero {
   min-height: 500px;
   background-size: cover;
@@ -500,7 +493,6 @@ button {
   color: #1f2937;
 }
 
-/* ==================== CONTENT SECTIONS ==================== */
 .content-section {
   max-width: 1280px;
   margin: 0 auto;
@@ -559,7 +551,6 @@ button {
   color: var(--text-primary);
 }
 
-/* ==================== CAST SECTION ==================== */
 .cast-row {
   display: flex;
   gap: 20px;
@@ -593,7 +584,6 @@ button {
   color: var(--text-muted);
 }
 
-/* ==================== SEARCH PAGE ==================== */
 .search-header {
   background: var(--bg-secondary);
   padding: 32px 24px;
@@ -640,7 +630,6 @@ button {
   color: var(--text-primary);
 }
 
-/* ==================== FILTER BAR ==================== */
 .filter-bar {
   background: var(--bg-primary);
   padding: 20px 24px;
@@ -691,7 +680,6 @@ button {
   color: var(--text-primary);
 }
 
-/* ==================== RESULTS GRID ==================== */
 .results-section {
   background: var(--bg-primary);
   padding: 32px 24px;
@@ -705,7 +693,6 @@ button {
   gap: 24px;
 }
 
-/* ==================== PAGINATION ==================== */
 .pagination {
   display: flex;
   justify-content: center;
@@ -748,7 +735,6 @@ button {
   color: var(--text-muted);
 }
 
-/* ==================== WATCHLIST PAGE ==================== */
 .page-header {
   background: linear-gradient(
     135deg,
@@ -859,7 +845,6 @@ button {
   background: #fef2f2;
 }
 
-/* Empty State */
 .empty-state {
   text-align: center;
   padding: 80px 24px;
@@ -887,7 +872,6 @@ button {
   margin-bottom: 24px;
 }
 
-/* ==================== FOOTER ==================== */
 .footer {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
@@ -946,7 +930,6 @@ button {
   font-size: 14px;
 }
 
-/* ==================== MODAL ==================== */
 .modal {
   position: fixed;
   inset: 0;
@@ -996,7 +979,6 @@ button {
   height: 100%;
 }
 
-/* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 1024px) {
   .info-grid {
     grid-template-columns: repeat(2, 1fr);

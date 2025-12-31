@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaFilm } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-brand">
           <Link to="/" className="logo">
-            <span className="logo-icon">🎬</span>
+            <span className="logo-icon"><FaFilm /></span>
             <span className="logo-text">MovieDB</span>
           </Link>
           <p className="footer-desc">

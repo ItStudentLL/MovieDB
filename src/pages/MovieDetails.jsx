@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../services/api";
 import { useWatchlist } from "../contexts/WatchlistContext";
 import MovieCard from "../components/MovieCard";
+import { FaStar, FaPlay, FaCheck, FaPlus } from "react-icons/fa";
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -60,7 +61,6 @@ const MovieDetails = () => {
 
   return (
     <div>
-      {/* Movie Hero Section */}
       <section
         className="movie-hero"
         style={{
@@ -84,7 +84,7 @@ const MovieDetails = () => {
               </h1>
               <div className="movie-meta-line">
                 <span className="rating-large">
-                  ⭐ {movie.vote_average?.toFixed(1)}/10
+                  <FaStar className="text-yellow-500" /> {movie.vote_average?.toFixed(1)}/10
                 </span>
                 <span className="separator">•</span>
                 <span>
@@ -102,7 +102,7 @@ const MovieDetails = () => {
               </div>
               {movie.tagline && <p className="tagline">"{movie.tagline}"</p>}
               <div className="action-buttons">
-                <button className="btn-primary">▶ Watch Trailer</button>
+                <button className="btn-primary"><FaPlay /> Watch Trailer</button>
                 <button
                   className="btn-secondary"
                   onClick={() =>
@@ -111,7 +111,7 @@ const MovieDetails = () => {
                       : addToWatchlist(movie)
                   }
                 >
-                  {inWatchlist ? "✓ In Watchlist" : "+ Add to Watchlist"}
+                  {inWatchlist ? <span><FaCheck /> In Watchlist</span> : <span><FaPlus /> Add to Watchlist</span>}
                 </button>
               </div>
             </div>
@@ -119,13 +119,11 @@ const MovieDetails = () => {
         </div>
       </section>
 
-      {/* Overview Section */}
       <section className="content-section">
         <h2 className="content-title">Overview</h2>
         <p className="overview-text">{movie.overview}</p>
       </section>
 
-      {/* Info Grid */}
       <section className="content-section alt-bg">
         <div className="info-grid">
           <div className="info-card">
@@ -151,7 +149,6 @@ const MovieDetails = () => {
         </div>
       </section>
 
-      {/* Cast Section */}
       <section className="content-section">
         <h2 className="content-title">Top Billed Cast</h2>
         <div className="cast-row">
@@ -173,7 +170,6 @@ const MovieDetails = () => {
         </div>
       </section>
 
-      {/* Recommendations */}
       {movie.recommendations?.results?.length > 0 && (
         <section className="movie-section alt-bg">
           <div className="section-header">

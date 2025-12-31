@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MovieCard from "../components/MovieCard";
+import { FaExclamationTriangle, FaSearch, FaFire, FaMagic, FaTrophy, FaArrowRight } from "react-icons/fa";
 import {
   getPopularMovies,
   getTrendingMovies,
@@ -55,7 +56,7 @@ const Home = () => {
   if (error) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-red-500 p-4 text-center">
-        <h2 className="text-2xl font-bold mb-4">⚠️ Error Loading Movies</h2>
+        <h2 className="text-2xl font-bold mb-4"><FaExclamationTriangle /> Error Loading Movies</h2>
         <p className="text-lg mb-4">{error}</p>
         {error.includes("API Key") && (
           <div className="bg-gray-800 p-6 rounded-lg max-w-md text-left text-gray-300">
@@ -80,7 +81,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">Discover Your Next Favorite Movie</h1>
@@ -89,7 +89,7 @@ const Home = () => {
             next binge-worthy film.
           </p>
           <form className="search-bar-large" onSubmit={handleSearch}>
-            <span className="search-icon">🔍</span>
+            <span className="search-icon"><FaSearch /></span>
             <input
               type="text"
               className="search-input"
@@ -104,12 +104,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Trending Movies */}
       <section className="movie-section">
         <div className="section-header">
-          <h2 className="section-title">🔥 Trending Now</h2>
+          <h2 className="section-title"><FaFire className="text-red-500" /> Trending Now</h2>
           <button onClick={() => navigate("/search")} className="view-all">
-            View All →
+            View All <FaArrowRight />
           </button>
         </div>
         <div className="movie-row">
@@ -119,12 +118,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Popular Movies */}
       <section className="movie-section alt-bg">
         <div className="section-header">
-          <h2 className="section-title">✨ Popular Hits</h2>
+          <h2 className="section-title"><FaMagic className="text-yellow-400" /> Popular Hits</h2>
           <button onClick={() => navigate("/search")} className="view-all">
-            View All →
+            View All <FaArrowRight />
           </button>
         </div>
         <div className="movie-row">
@@ -134,12 +132,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Top Rated Movies */}
       <section className="movie-section">
         <div className="section-header">
-          <h2 className="section-title">🏆 Top Rated</h2>
+          <h2 className="section-title"><FaTrophy className="text-yellow-500" /> Top Rated</h2>
           <button onClick={() => navigate("/search")} className="view-all">
-            View All →
+            View All <FaArrowRight />
           </button>
         </div>
         <div className="movie-row">

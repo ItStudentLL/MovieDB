@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useWatchlist } from "../contexts/WatchlistContext";
+import { FaStar, FaFilm } from "react-icons/fa";
 
 const Watchlist = () => {
   const { watchlist, removeFromWatchlist } = useWatchlist();
 
   return (
     <div>
-      {/* Page Header */}
       <header className="page-header">
         <h1 className="page-title">My Watchlist</h1>
         <p className="page-subtitle">
@@ -15,7 +15,6 @@ const Watchlist = () => {
         </p>
       </header>
 
-      {/* Watchlist Section */}
       <section className="watchlist-section">
         {watchlist.length > 0 ? (
           <div className="watchlist-grid">
@@ -36,7 +35,7 @@ const Watchlist = () => {
                     {movie.title}
                   </Link>
                   <p className="movie-meta">
-                    {movie.release_date?.split("-")[0]} • ⭐{" "}
+                    {movie.release_date?.split("-")[0]} • <FaStar className="text-yellow-500" />{" "}
                     {movie.vote_average?.toFixed(1)}
                   </p>
                   <p className="movie-overview">{movie.overview}</p>
@@ -61,7 +60,7 @@ const Watchlist = () => {
         ) : (
           <div className="empty-state">
             <div className="empty-content">
-              <span className="empty-icon">🎬</span>
+              <span className="empty-icon"><FaFilm /></span>
               <h2>Your watchlist is empty</h2>
               <p>
                 Explore movies and add them to your watchlist to keep track of

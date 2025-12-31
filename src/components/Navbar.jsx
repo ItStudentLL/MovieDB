@@ -1,6 +1,7 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
+import { FaFilm, FaSearch, FaMoon, FaSun, FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,7 +15,7 @@ const Navbar = () => {
     <header className="header">
       <div className="header-content">
         <Link to="/" className="logo">
-          <span className="logo-icon">🎬</span>
+          <span className="logo-icon"><FaFilm /></span>
           <span className="logo-text">MovieDB</span>
         </Link>
 
@@ -38,14 +39,14 @@ const Navbar = () => {
 
         <div className="header-actions">
           <Link to="/search" className="icon-btn" title="Search">
-            🔍
+            <FaSearch />
           </Link>
           <button
             className="icon-btn theme-toggle"
             onClick={toggleTheme}
             title="Toggle Theme"
           >
-            {theme === "light" ? "🌙" : "☀️"}
+            {theme === "light" ? <FaMoon /> : <FaSun />}
           </button>
         </div>
 
@@ -53,11 +54,10 @@ const Navbar = () => {
           className="mobile-menu-btn"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          ☰
+          <FaBars />
         </button>
       </div>
 
-      {/* Mobile Navigation */}
       <nav className={`mobile-nav ${isMobileMenuOpen ? "active" : ""}`}>
         <Link
           to="/"
@@ -95,7 +95,7 @@ const Navbar = () => {
             setIsMobileMenuOpen(false);
           }}
         >
-          {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+          {theme === "light" ? <span><FaMoon /> Dark Mode</span> : <span><FaSun /> Light Mode</span>}
         </button>
       </nav>
     </header>

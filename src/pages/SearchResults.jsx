@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import MovieCard from "../components/MovieCard";
 import { searchMovies } from "../services/api";
+import { FaSearch, FaTimes } from "react-icons/fa";
 
 const SearchResults = () => {
   const [searchParams] = useSearchParams();
@@ -38,10 +39,9 @@ const SearchResults = () => {
 
   return (
     <div>
-      {/* Search Header */}
       <section className="search-header">
         <form className="search-bar-inline" onSubmit={handleSearch}>
-          <span className="search-icon">🔍</span>
+          <span className="search-icon"><FaSearch /></span>
           <input
             type="text"
             className="search-input"
@@ -55,7 +55,7 @@ const SearchResults = () => {
               className="clear-btn"
               onClick={() => setSearchInput("")}
             >
-              ✕
+              <FaTimes />
             </button>
           )}
         </form>
@@ -66,7 +66,6 @@ const SearchResults = () => {
         )}
       </section>
 
-      {/* Results Section */}
       <section className="results-section">
         {loading ? (
           <div className="flex items-center justify-center py-20">
@@ -86,7 +85,7 @@ const SearchResults = () => {
         ) : (
           <div className="empty-state">
             <div className="empty-content">
-              <span className="empty-icon">🔍</span>
+              <span className="empty-icon"><FaSearch /></span>
               <h2>No results found</h2>
               <p>
                 We couldn't find any movies matching "{query}". Try different
