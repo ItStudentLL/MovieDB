@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -12,14 +12,14 @@ function App() {
   return (
     <ThemeProvider>
       <WatchlistProvider>
-        <Router basename="/MovieDB/">
+        <Router>
           <div className="flex flex-col min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] font-sans transition-colors duration-300">
             <Navbar />
             <main className="flex-grow">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/search" element={<SearchResults />} />
-                <Route path="/movie/:id" element={<MovieDetails />} />
+                <Route path="/movie/:id" element={<MovieDetails />} />                                                                                                                                                                  
                 <Route path="/watchlist" element={<Watchlist />} />
               </Routes>
             </main>
